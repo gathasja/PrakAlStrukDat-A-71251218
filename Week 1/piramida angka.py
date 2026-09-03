@@ -6,10 +6,10 @@ def piramida_angka(angka):
                 print(j, end='')
             else:
                 print(j, end=' ')
-        for j in range(i - 1, 0, -1):
-            if j == 1:
-                print(" " + str(j), end="")
-            else:
-                print(" " + str(j), end="")
+        # for j in range(i - 1, 0, -1):
+        #     if j == 1:
+        #         print(" " + str(j), end="")
+        #     else:
+        #         print(" " + str(j), end="")
         print()  
-piramida_angka(5)
+piramida_angka(4)
