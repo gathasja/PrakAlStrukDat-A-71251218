@@ -12,4 +12,4 @@ def piramida_angka(angka):
             else:
                 print(" " + str(j), end="")
         print()  
-piramida_angka(9)
+piramida_angka(7)
