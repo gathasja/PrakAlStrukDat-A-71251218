@@ -24,7 +24,7 @@ def RecursiveFilterSort(data_array, current_length):
 
 # Ganti Dengan NIM Anda
 # Contoh, NIM_MAHASISWA = "71230994" -> nanti outputnya [4, 2, 0] 
-NIM_MAHASISWA = "71251218"
+NIM_MAHASISWA = "71251219"
 if NIM_MAHASISWA != "":
     raw_data    = [int(digit) for digit in NIM_MAHASISWA]
     data_length = len(raw_data)
@@ -32,8 +32,12 @@ if NIM_MAHASISWA != "":
     final_result = RecursiveFilterSort(raw_data, data_length)
     last_digit = int(NIM_MAHASISWA[-1])
 
+    if last_digit % 2 == 0:
+        tipe = "GENAP (Descending)"
+    else:
+        tipe = "GANJIL (Ascending)"
     print("===== FILTER & SORT NIM =====")
     print(f"NIM Mahasiswa  : {NIM_MAHASISWA}")
-    print(f"Tipe           : GENAP (Descending)")
+    print(f"Tipe           : {tipe}")
     print(f"Data Digit Awal: {raw_data}")
     print(f"Hasil Akhir    : {final_result}")
