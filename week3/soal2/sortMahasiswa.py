@@ -16,6 +16,23 @@ def sort_by(data: list=data, index: str="nim",rev = False):
     }
     
     # Kerjakan disini
+    col = maps[index]
+    n = len(data)
+
+    for i in range(n - 1):
+        swapped = False
+        for j in range(n - 1 - i):
+            nilai_kiri = data[j][col]
+            nilai_kanan = data[j + 1][col]
+
+            # ascending (rev=False) -> tukar jika kiri > kanan
+            # descending (rev=True) -> tukar jika kiri < kanan
+            if (not rev and nilai_kiri > nilai_kanan) or (rev and nilai_kiri < nilai_kanan):
+                data[j], data[j + 1] = data[j + 1], data[j]
+                swapped = True
+
+        if not swapped:
+            break
     
     # Jangan Dihapus
     show_data(data)
