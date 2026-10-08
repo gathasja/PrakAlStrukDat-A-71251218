@@ -13,7 +13,7 @@ def sort_by_views(songs):
     for i in range(n - 1):
         swapped = False
         for j in range(n - 1 - i):
-            if res[j]["views"] < res[j + 1]["views"]:
+            if res[j]["views"] > res[j + 1]["views"]:
                 res[j], res[j + 1] = res[j + 1], res[j]
                 swapped = True
         if not swapped:
