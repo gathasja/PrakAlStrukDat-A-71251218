@@ -19,6 +19,6 @@ if role == "peserta":
 # JIKA YANG LOGIN PESERTA -> ALIHKAN KE PAGE EVENT
 st.title(f"Welcome, {role} 👋")
 if role == "Admin":
-    st.header("data pengguna")
+    st.header("Data pengguna")
     st.table(data)
 # JIKA YANG LOGIN ADMIN TAMPILKAN SELURUH DATA TERSERAH MAU BENTUKNYA APAPUN st.table, st.write boleh aja
