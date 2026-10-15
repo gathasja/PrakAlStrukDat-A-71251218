@@ -105,13 +105,13 @@ judul = katalog[kode]["judul"]
 if pinjam:
     pesan =  pinjam_buku(katalog, pinjaman, nama, kode)
     if pesan: 
-        st.error(pesan)
+        st.error(f"Data tidak ditemukan!")
     else:
         st.success(f"{nama} berhasil meminjam {judul} ✅")
 elif kembali:
     pesan =  kembalikan_buku(katalog, pinjaman, nama, kode)
     if pesan: 
-        st.error("pesan")
+        st.error(f"Data tidak ditemukan!")
     else:
         st.success(f"{nama} berhasil mengembalikan {judul} ✅")
         
