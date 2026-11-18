@@ -1,3 +1,4 @@
+#soal piramida_angka
 def piramida_angka(angka):
     for i in range(1, angka + 1):
         print(' ' * (angka - i) * 2, end='')

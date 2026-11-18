@@ -12,25 +12,19 @@ mahasiswa = [
     {"nama": "Joko", "nilai": [78, 82, 75, 80, 85]}
 ]
 
-
 # Menghitung rata-rata nilai setiap mahasiswa
 for m in mahasiswa:
     m["rataRata"] = sum(m["nilai"]) / len(m["nilai"])
-
-# Divide and Conquer - Merge Sort
 def merge_sort(data):
     if len(data) <= 1:
         return data
-
     mid = len(data) // 2
     kiri = data[:mid]
     kanan = data[mid:]
 
     kiri = merge_sort(kiri)
     kanan = merge_sort(kanan)
-
     return merge(kiri, kanan)
-
 
 def merge(kiri, kanan):
     hasil = []
@@ -49,23 +43,18 @@ def merge(kiri, kanan):
 
 # Menghitung rata-rata keseluruhan
 rataRata_keseluruhan = sum(m["rataRata"] for m in mahasiswa) / len(mahasiswa)
-
 # Mengurutkan mahasiswa menggunakan Merge Sort
 mahasiswa_urut = merge_sort(mahasiswa)
-
-
 # Menampilkan hasil rata-rata keseluruhan
 print(f"Rata-rata keseluruhan: {rataRata_keseluruhan:.2f}")
 
 print("\n=== DI ATAS / SAMA DENGAN RATA-RATA ===")
-
 # Tampilkan List di atas / sama dengan rata-rata
 for m in mahasiswa_urut:
     if m["rataRata"] >= rataRata_keseluruhan:
         print(f"{m["nama"]} - Nilai: {m["nilai"]} - Rata-rata: {m["rataRata"]}")
 
 print("\n=== DI BAWAH RATA-RATA ===")
-
 # Tampilkan List di bawah rata-rata
 for m in mahasiswa_urut:
     if m["rataRata"] < rataRata_keseluruhan:

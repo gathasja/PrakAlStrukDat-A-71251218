@@ -1,3 +1,4 @@
+#pola sakit kepala
 def pola_sakit_kepala(panjang, lebar):
     panjang,lebar = panjang % 10,lebar % 10
     

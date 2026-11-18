@@ -1,3 +1,4 @@
+#fungsi mahasiswa
 import random
 def presensi_dummy(data):
     for i in data:

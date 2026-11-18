@@ -1,3 +1,4 @@
+#sort music
 songs = [
     {"title": "Golden Hour", "artist": "JVKE", "genre": "Pop", "views": 980000},
     {"title": "Blinding Lights", "artist": "The Weeknd", "genre": "Pop", "views": 2500000},
@@ -19,14 +20,11 @@ def sort_by_views(songs):
         if not swapped:
             break
     return res
-
 def sort_by_favourite_genre(songs, favourite_genre):
     res = songs.copy()
     n = len(res)
-
     def priority(song):
         return 0 if song["genre"] == favourite_genre else 1
-
     for i in range(n - 1):
         swapped = False
         for j in range(n - 1 - i):
@@ -38,18 +36,14 @@ def sort_by_favourite_genre(songs, favourite_genre):
     return res
 
 print("=== SORT BY VIEWS ===")
-
 result_views = sort_by_views(songs)
 
 for song in result_views:
     print(song["title"], "-", song["views"], "views")
 
-
 print("\n=== SORT BY FAVOURITE GENRE ===")
 
 favourite_genre = "R&B"
-
 result_genre = sort_by_favourite_genre(songs, favourite_genre)
-
 for song in result_genre:
     print(song["title"], "-", song["genre"])

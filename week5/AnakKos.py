@@ -3,13 +3,9 @@ import pandas as pd
 
 # --- Title ---
 st.title("🏠 Pengeluaran Anak Kos 71251218 Anda")
-
-
 # --- Input Uang Bulanan ---
 st.subheader("Uang Bulanan")
 bulanan = st.number_input("Insert a number", value=None, placeholder="masukan nominal...", key = 5)
-
-
 # --- Input Pengeluaran ---
 st.subheader("Pengeluaran Bulanan")
 makanan = st.number_input("duit makanan", value=None, placeholder="masukan nominal...", key = 0)
@@ -17,20 +13,12 @@ kos = st.number_input("bayar kos", value=None, placeholder="masukan nominal...",
 transportasi = st.number_input("biaya transportasi", value=None, placeholder="masukan nominal...", key = 2)
 internet = st.number_input("bayar internet", value=None, placeholder="masukan nominal...", key = 3)
 hiburan = st.number_input("liburan", value=None, placeholder="masukan nominal...", key = 4)
-
-
-
 # --- Tombol Ngitung Pengeluaran ---
-if st.button("hitung"): # if jangan dihapus, cuman nambahin tombol disini :
- 
+if st.button("hitung"): # if jangan dihapus, cuman nambahin tombol disini : 
     # --- Ngitung Total Pengeluaran ---
     total = makanan + kos + transportasi + internet + hiburan
-
-
     # --- Ngitung Sisa Uang ---
     sisa_uang = bulanan - total
-
-
     # --- Menampilkan Hasil kananPerhitungan ---
     st.subheader("Ringkasan Keuangan")
     kolom1, kolom2, kolom3 = st.columns(3)
@@ -49,24 +37,17 @@ if st.button("hitung"): # if jangan dihapus, cuman nambahin tombol disini :
             # Tampilin sisa uang di sini
             "Sisa Uang", sisa_uang
         )
-
-
     # --- Kondisi Keuangan ---
     st.subheader("Kondisi Keuangan")
-
     # Kondisi 1
     if sisa_uang > 0:
         st.success("masih ada sisa") 
-
     # Kondisi 2
     elif sisa_uang  == 0:
         st.warning("duitlu habis!")
-
     # Kondisi 3
     else:
         st.error("duitlu minus woy!")
-
-
     # --- Data Pengeluaran ---
     # Ini gausah diubah! 
     # Udah kubantu bikinin, tinggal dipake aja
@@ -86,11 +67,9 @@ if st.button("hitung"): # if jangan dihapus, cuman nambahin tombol disini :
             hiburan
         ]
     }
-
     df_pengeluaran = pd.DataFrame(data_pengeluaran)
-
     # --- Pengeluaran Terbesar ---
-    maks = []  # Cari pengeluaran terbesar
+    maks = []
     if makanan > kos and makanan > transportasi and makanan > internet and makanan > hiburan:
         maks.append("makanan")
     elif kos > makanan and kos > transportasi and kos > internet and kos > hiburan:
@@ -104,9 +83,7 @@ if st.button("hitung"): # if jangan dihapus, cuman nambahin tombol disini :
 
     st.subheader("Pengeluaran Terbesar")
     st.write("kategori dengan pengeluaran terbesar:", maks[0]) # Tampilin pengeluaran terbesar di sini
-
-
     # --- Grafik Pengeluaran ---
     st.subheader("Grafik Pengeluaran")
     p = df_pengeluaran.set_index("Kategori")
-    st.bar_chart(p) # Tampilin grafik pengeluaran di sini
+    st.bar_chart(p) 

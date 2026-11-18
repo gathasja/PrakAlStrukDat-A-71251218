@@ -1,3 +1,4 @@
+#sort mahasiswa
 import random
 from dataMahasiswa import data
 from fungsiMahasiswa import show_data, presensi_dummy, acak_data
@@ -6,19 +7,15 @@ data = data.copy()
 presensi_dummy(data)
 acak_data(data)
 
-
-
 def sort_by(data: list=data, index: str="presensi",rev = False):
     maps = {
         "nim":0,
         "nama":1,
         "presensi":2,
-    }
-    
+    }    
     # Kerjakan disini
     col = maps[index]
     n = len(data)
-
     for i in range(n - 1):
         swapped = False
         for j in range(n - 1 - i):
@@ -27,13 +24,10 @@ def sort_by(data: list=data, index: str="presensi",rev = False):
             if (not rev and nilai_kiri > nilai_kanan) or (rev and nilai_kiri < nilai_kanan):
                 data[j], data[j + 1] = data[j + 1], data[j]
                 swapped = True
-
         if not swapped:
             break
-    
     # Jangan Dihapus
     show_data(data)
-
 sort_by(data)
 
 

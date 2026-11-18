@@ -1,13 +1,9 @@
-# import ini jangan dihapus/diedit yak
+#KOPDES
 import random
-
-
 def totalPenjualan(data, n):
     if n == 0:
         return 0
     return data[n - 1][1] + totalPenjualan(data, n - 1)
-
-
 def penjualanTertinggi(data, n):
     if n == 1:
         return data[0]
@@ -16,20 +12,15 @@ def penjualanTertinggi(data, n):
         return data[n - 1]
     else:
         return tertinggiSisa
-
-
 def diAtasRataRata(penjualan, rataRata):
     jumlah = 0
     for namaBarang in penjualan:
         if penjualan[namaBarang] > rataRata:
             jumlah += 1
     return jumlah
-
-
 # Program Utama - Jangan dihapus/diedit yak
 angka = int(input("NIM: "))
 random.seed(angka)
-
 barang = [
     "Beras",
     "Minyak",
@@ -40,17 +31,14 @@ barang = [
 ]
 
 penjualan = {}
-
 for namaBarang in barang:
     penjualan[namaBarang] = random.randint(100, 500)
-
 data = list(penjualan.items())
 n = len(data)
 
 print("\n===== Data Penjualan =====")
 for namaBarang, jumlah in penjualan.items():
     print(namaBarang, ":", jumlah)
-
 total = totalPenjualan(data, n)
 tertinggi = penjualanTertinggi(data, n)
 rataRata = total / n
